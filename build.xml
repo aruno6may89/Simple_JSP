@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<project name="fax" basedir="." default="build-war">
+    <property name="src.dir" value="src"/>
+    <property name="WebContent.dir" value="WebContent"/>
+    <property name="build.dir" value="${WebContent.dir}/WEB-INF/classes"/>
+    <property name="name" value="fax"/>
+
+    <path id="master-classpath">
+        <fileset dir="${WebContent.dir}/WEB-INF/lib">
+            <include name="*.jar"/>
+        </fileset>
+        <pathelement path="${build.dir}"/>
+    </path>
+
+    <target name="build" description="Compile source tree java files" depends="clean">
+        <mkdir dir="${build.dir}"/>
+        <javac includeantruntime="false"  destdir="${build.dir}" source="1.5" target="1.5">
+            <src path="${src.dir}"/>
+            <classpath refid="master-classpath"/>
+        </javac>
+    </target>
+ 
+    <target name="clean" description="Clean output directories">
+        <delete>
+            <fileset dir="${build.dir}">
+                <include name="**/*.class"/>
+            </fileset>
+        </delete>
+    </target>
+    <target name="jar" depends="build">
+        <jar destfile="${build.dir}/jar/app1.jar" basedir="${build.dir}/com/coolonWeb"/>
+    </target>
+    <target name="build-war" depends="jar">
+        <war destfile="/Users/Vinothini/Library/Tomcat/apache-tomcat-7.0.53/webapps/Samplejsp.war" webxml="${WebContent.dir}/WEB-INF/web.xml">
+            <fileset dir="${WebContent.dir}">
+                <include name="**/*.*"/>
+            </fileset>
+        <lib dir="${WebContent.dir}/WEB-INF/lib">
+            <exclude name="portlet.jar"/>
+        </lib>
+        <classes dir="${build.dir}/com/coolonWeb"/>
+        </war>
+    </target>
+</project>
