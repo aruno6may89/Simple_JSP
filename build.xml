@@ -25,6 +25,9 @@
             <fileset dir="${build.dir}">
                 <include name="**/*.class"/>
             </fileset>
+            <fileset dir="/Users/Vinothini/Library/Tomcat/apache-tomcat-7.0.53/webapps">
+                <include name="Samplejsp.war"/>
+            </fileset>
         </delete>
     </target>
     <target name="jar" depends="build">
