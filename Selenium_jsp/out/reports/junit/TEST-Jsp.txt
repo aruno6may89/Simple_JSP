@@ -1,0 +1,14 @@
+Testsuite: Jsp
+Tests run: 1, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 18.295 sec
+
+Testcase: testJsp1 took 18.045 sec
+	FAILED
+expected:<[Welcome today!]> but was:<[The following error was encountered while trying to retrieve the URL: http://192.168.3.7:8081/Samplejsp/]>
+junit.framework.AssertionFailedError: expected:<[Welcome today!]> but was:<[The following error was encountered while trying to retrieve the URL: http://192.168.3.7:8081/Samplejsp/]>
+	at Jsp.testJsp1(Unknown Source)
+
+	FAILED
+org.junit.ComparisonFailure: expected:<[pOH Site - pOH]> but was:<[ERROR: The requested URL could not be retrieved]>
+junit.framework.AssertionFailedError: org.junit.ComparisonFailure: expected:<[pOH Site - pOH]> but was:<[ERROR: The requested URL could not be retrieved]>
+	at Jsp.tearDown(Unknown Source)
+
