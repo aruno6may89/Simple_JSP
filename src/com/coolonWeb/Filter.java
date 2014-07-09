@@ -32,6 +32,7 @@ public class Filter implements javax.servlet.Filter {
 		arg0.setAttribute("emailAddress", Config.CONTACT_EMAIL);
 		
 		arg2.doFilter(arg0, arg1);
+arg2.doFilter(arg0, arg1);
 		
 	}
 
