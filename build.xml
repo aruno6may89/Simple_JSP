@@ -11,7 +11,8 @@
         </fileset>
         <pathelement path="${build.dir}"/>
     </path>
-
+       
+    
     <target name="build" description="Compile source tree java files" depends="clean">
         <mkdir dir="${build.dir}"/>
         <javac includeantruntime="false"  destdir="${build.dir}" source="1.5" target="1.5">
@@ -25,7 +26,7 @@
             <fileset dir="${build.dir}">
                 <include name="**/*.class"/>
             </fileset>
-            <fileset dir="/Users/Vinothini/Library/Tomcat/apache-tomcat-7.0.53/webapps">
+            <fileset dir="/Users/Vinothini/LibraryA/Tomcat/apache-tomcat-7.0.53/webapps">
                 <include name="Samplejsp.war"/>
             </fileset>
         </delete>
@@ -34,7 +35,7 @@
         <jar destfile="${build.dir}/jar/app1.jar" basedir="${build.dir}/com/coolonWeb"/>
     </target>
     <target name="build-war" depends="jar">
-        <war destfile="/Users/Vinothini/Library/Tomcat/apache-tomcat-7.0.53/webapps/Samplejsp.war" webxml="${WebContent.dir}/WEB-INF/web.xml">
+        <war destfile="/Users/Vinothini/LibraryA/Tomcat/apache-tomcat-7.0.53/webapps/Samplejsp.war" webxml="${WebContent.dir}/WEB-INF/web.xml">
             <fileset dir="${WebContent.dir}">
                 <include name="**/*.*"/>
             </fileset>
@@ -44,4 +45,17 @@
         <classes dir="${build.dir}/com/coolonWeb"/>
         </war>
     </target>
+    
 </project>
+
+
+
+
+
+
+
+
+
+
+  
+  
